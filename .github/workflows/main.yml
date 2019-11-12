@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-#    - name: Login to docker hub
-#      run: docker login $DOCKER_IMAGE $DOCKER_TOKEN
+    - name: Login to docker hub
+      run: docker login --username $DOCKER_USERNAME  --password $DOCKER_TOKEN
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag dvjhwf8qp/lanbuntu:$(date +%s)
+      run: docker build . --file Dockerfile --tag DOCKER_IMAGE:$(date +%s)
     - name: Push the Docker image
-      run: docker push dvjhwf8qp/lanbuntu:latest
+      run: docker push $DOCKER_IMAGE:latest
