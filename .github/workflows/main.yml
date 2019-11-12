@@ -11,6 +11,6 @@ jobs:
    #   env: GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: docker login https://registry-1.docker.io/ -u "${{ secrets.DOCKER_USERNAME}}"  -p "${{ secrets.DOCKER_TOKEN}}"
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag DOCKER_IMAGE:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${{ secrets.DOCKER_IMAGE}}:$(date +%s)
     - name: Push the Docker image
-      run: docker push $DOCKER_IMAGE:latest
+      run: docker push ${{ secrets.DOCKER_IMAGE}}:latest
