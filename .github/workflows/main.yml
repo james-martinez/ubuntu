@@ -8,7 +8,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Login to docker hub
-      run: docker login https://registry-1.docker.io/ -u "${{ secrets.DOCKER_USERNAME"  -p "${{ secrets.DOCKER_TOKEN"
+   #   env: 
+      run: docker login https://registry-1.docker.io/ -u "${{ secrets.DOCKER_USERNAME}"  -p "${{ secrets.DOCKER_TOKEN}"
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag DOCKER_IMAGE:$(date +%s)
     - name: Push the Docker image
