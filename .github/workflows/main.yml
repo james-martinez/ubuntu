@@ -8,6 +8,6 @@ jobs:
     - name: Login
       run: docker login docker.pkg.github.com -u "${{ secrets.DOCKER_USERNAME}}"  -p "${{ secrets.DOCKER_TOKEN}}"
     - name: Build
-      run: docker build -t docker.pkg.github.com/james-martinez/ubuntu/lanbuntu:latest .   
+      run: docker build -t docker.pkg.github.com/james-martinez/ubuntu/lanbuntu:v1.0 .   
     - name: Push
-      run: docker push docker.pkg.github.com/james-martinez/ubuntu/lanbuntu:latest
+      run: docker push docker.pkg.github.com/james-martinez/ubuntu/lanbuntu:v1.0
