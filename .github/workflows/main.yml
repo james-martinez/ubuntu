@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Login to Docker
+    - name: Login
       run: docker login docker.pkg.github.com -u "${{ secrets.DOCKER_USERNAME}}"  -p "${{ secrets.DOCKER_TOKEN}}"
-  #  - name: Build the Docker image
-  #    run: docker build . --file Dockerfile --tag "${{ secrets.DOCKER_IMAGE_TAG}}"
-  #  - name: Push the Docker image
-  #    run: docker push "${{ secrets.DOCKER_IMAGE_TAG}}"
+    - name: Build
+      run: $ docker build -t docker.pkg.github.com/james-martinez/ubuntu/lanbuntu:latest .   
+    - name: Push the Docker image
+      run: docker push docker.pkg.github.com/james-martinez/ubuntu/lanbuntu:latest
