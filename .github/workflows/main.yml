@@ -8,8 +8,8 @@ jobs:
     - uses: azure/docker-login@v1
       with:
         login-server: docker.pkg.github.com
-        username: "${{secrets.DOCKER_USERNAME}}"
-        password: "${{secrets.DOCKER_TOKEN}}"
+        username: ${{secrets.DOCKER_USERNAME}}
+        password: ${{secrets.DOCKER_TOKEN}}
     - run: | 
-        docker build -t docker.pkg.github.com/james-martinez/ubuntu/lanbuntu:"${{github.sha}}" .
-        docker push docker.pkg.github.com/james-martinez/ubuntu/lanbuntu:"${{github.sha }}}"
+        docker build -t docker.pkg.github.com/james-martinez/ubuntu/lanbuntu:${{github.sha}} .
+        docker push docker.pkg.github.com/james-martinez/ubuntu/lanbuntu:${{github.sha}}}
