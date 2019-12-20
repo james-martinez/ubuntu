@@ -1,0 +1,14 @@
+
+name: Docker Image CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: azure/docker-login@v1
+        username: ${{secrets.DOCKERHUB_USERNAME}}
+        password: ${{secrets.DOCKERHUB_TOKEN}}
+    - run: | 
+        docker build -t dvjhwf8qp/lanbuntu:latest .
+        docker push dvjhwf8qp/lanbuntu:latest
