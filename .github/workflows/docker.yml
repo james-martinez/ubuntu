@@ -1,5 +1,4 @@
-
-name: Docker Image CI
+name: Docker Hub Image CI
 on: [push]
 jobs:
   build:
