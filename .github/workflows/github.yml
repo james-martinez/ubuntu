@@ -1,6 +1,6 @@
 name: Github Docker Image CI
 on: 
-  watch
+  watch:
     types: [started]
 jobs:
   build:
